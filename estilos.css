@@ -1,0 +1,97 @@
+:root {
+  --papel: #f6f5f2;
+  --tinta: #14202e;
+  --tinta-suave: #56606c;
+  --petroleo: #12233b;
+  --niebla: #eef1f5;
+  --linea: #dcdad4;
+  --pendiente: #fff1b8;
+  --titulos: "Sora", "Segoe UI", system-ui, sans-serif;
+  --texto: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--petroleo); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--petroleo); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-family: var(--titulos); line-height: 1.2; letter-spacing: -0.01em; }
+
+.contenedor { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
+
+/* Cabecera */
+.cabecera { border-bottom: 1px solid var(--linea); }
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; }
+.marca { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--tinta); font-family: var(--titulos); font-weight: 600; font-size: 1.2rem; }
+.marca img { height: 40px; width: auto; display: block; }
+.cabecera nav a { font-size: 0.95rem; }
+
+/* Portada */
+.portada { padding-block: clamp(3rem, 9vw, 6.5rem) clamp(2.5rem, 6vw, 4.5rem); }
+.portada .simbolo { width: clamp(4.5rem, 12vw, 7rem); height: auto; margin-bottom: 1.75rem; }
+.portada h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 600; max-width: 18ch; margin: 0 0 1.25rem; }
+.portada p { font-size: 1.2rem; color: var(--tinta-suave); max-width: 52ch; margin: 0; }
+
+.bloque { padding-block: 2.5rem; border-top: 1px solid var(--linea); }
+.bloque h2 { font-size: 1.45rem; font-weight: 600; margin: 0 0 1.25rem; }
+.funciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2.5rem; margin: 0; padding: 0; list-style: none; }
+.funciones li { padding-left: 1rem; border-left: 3px solid var(--petroleo); }
+.funciones strong { display: block; font-family: var(--titulos); font-weight: 600; margin-bottom: 0.2rem; }
+.funciones span { color: var(--tinta-suave); }
+
+.contacto { background: var(--niebla); border-radius: 14px; padding: clamp(1.5rem, 4vw, 2.5rem); }
+.contacto p { margin: 0.4rem 0 0; }
+
+/* Pie */
+.pie { border-top: 1px solid var(--linea); margin-top: 3rem; padding-block: 1.75rem; font-size: 0.93rem; color: var(--tinta-suave); }
+.pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 2rem; }
+
+/* Política de privacidad */
+.politica { display: grid; grid-template-columns: 15rem 1fr; gap: 3.5rem; padding-block: 3rem 1rem; align-items: start; }
+.indice { position: sticky; top: 1.5rem; font-size: 0.93rem; }
+.indice p { font-family: var(--titulos); font-weight: 600; margin: 0 0 0.6rem; }
+.indice ol { margin: 0; padding-left: 1.3rem; }
+.indice li { margin-bottom: 0.35rem; }
+.indice a { color: var(--tinta-suave); text-decoration: none; }
+.indice a:hover { color: var(--petroleo); text-decoration: underline; }
+
+.texto-legal { max-width: 68ch; }
+.texto-legal h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 600; margin: 0 0 0.5rem; }
+.texto-legal .fecha { color: var(--tinta-suave); margin: 0 0 2rem; }
+.texto-legal h2 { font-size: 1.3rem; font-weight: 600; margin: 2.75rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--linea); }
+.texto-legal h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
+.texto-legal ul { padding-left: 1.3rem; }
+.texto-legal li { margin-bottom: 0.4rem; }
+
+.ficha { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1.5rem; background: var(--niebla); border-radius: 14px; padding: 1.4rem 1.6rem; }
+.ficha dt { font-weight: 700; }
+.ficha dd { margin: 0; }
+
+.aviso-google { border-left: 4px solid var(--petroleo); background: var(--niebla); padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; }
+
+.tabla-envoltura { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-width: 34rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--linea); }
+th { font-family: var(--titulos); font-weight: 600; font-size: 0.93rem; }
+
+mark.pendiente { background: var(--pendiente); color: var(--tinta); padding: 0 0.25em; border-radius: 3px; }
+
+@media (max-width: 52rem) {
+  .politica { grid-template-columns: 1fr; gap: 1.5rem; }
+  .indice { position: static; background: var(--niebla); border-radius: 14px; padding: 1.2rem 1.4rem; }
+  .ficha { grid-template-columns: 1fr; gap: 0.15rem; }
+  .ficha dd { margin-bottom: 0.6rem; }
+}
