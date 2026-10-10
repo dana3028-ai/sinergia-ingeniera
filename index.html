@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sinergia · Reparaciones y mantenimiento del hogar en Madrid</title>
-<meta name="description" content="Fontanería, electricidad, carpintería, climatización, montaje, paneles solares y más en la Comunidad de Madrid y provincias cercanas. Pide tu servicio o escríbenos por WhatsApp al 684 79 55 20.">
+<meta name="description" content="Fontanería, electricidad, pladur, carpintería, climatización, montaje, paneles solares y más en la Comunidad de Madrid y provincias cercanas. Pide tu servicio o escríbenos por WhatsApp al 684 79 55 20.">
 <meta name="theme-color" content="#12233b">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -173,6 +173,68 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
 .puntos button[aria-current="true"]{background:var(--laton);width:1.6rem;border-radius:1rem}
 @media (prefers-reduced-motion:reduce){.tarjeta,.paso p,.paso .nodo{transition:none}}
 
+/* Pladur: calculadora por m² */
+.pladur-calc .cabeza{max-width:48rem}
+.calc{display:grid;grid-template-columns:1.15fr 1fr;background:#fff;border:1px solid var(--linea);border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -45px rgba(18,35,59,.55)}
+@media (max-width:56rem){.calc{grid-template-columns:1fr}}
+.calc-izq{padding:clamp(1.3rem,3.5vw,2.2rem);display:grid;gap:1.3rem;align-content:start;min-width:0}
+.calc-der{background:radial-gradient(120% 90% at 85% 0%,var(--marino-3) 0%,var(--marino) 60%);color:#fff;padding:clamp(1.3rem,3.5vw,2.2rem);display:grid;gap:1.1rem;align-content:start;min-width:0}
+.calc fieldset{border:0;margin:0;padding:0;min-width:0}
+.calc legend{font-weight:700;font-size:.93rem;margin-bottom:.55rem;padding:0}
+.opciones{display:grid;gap:.6rem}
+.opcion{position:relative;display:flex;justify-content:space-between;align-items:center;gap:1rem;border:1px solid var(--linea);border-radius:12px;padding:.8rem 1rem;cursor:pointer;background:var(--piedra);font-weight:400;margin:0;transition:border-color .2s,background .2s,box-shadow .2s}
+.opcion input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.opcion b{font-family:var(--titulos);font-weight:600;color:var(--marino);font-size:.98rem;display:block;line-height:1.3}
+.opcion small{color:var(--suave);font-size:.85rem}
+.opcion .pm2{font-family:var(--titulos);font-weight:600;color:var(--laton-osc);white-space:nowrap;font-size:.92rem;font-variant-numeric:tabular-nums}
+.opcion.sel{border-color:var(--marino);background:#fff;box-shadow:inset 0 0 0 1px var(--marino)}
+.opcion:focus-within{outline:3px solid var(--laton);outline-offset:2px}
+@media (max-width:26rem){.opcion{flex-direction:column;align-items:flex-start;gap:.3rem}}
+.m2{display:grid;grid-template-columns:1fr 7.5rem;gap:.9rem;align-items:center}
+.m2 input[type=range]{accent-color:var(--marino);padding:0;min-height:2rem;background:none;border:0;outline-offset:4px}
+.m2 .num{position:relative}
+.m2 .num input{padding-right:2.6rem;text-align:right;font-variant-numeric:tabular-nums;font-family:var(--titulos);font-weight:600}
+.m2 .num span{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);color:var(--suave);pointer-events:none}
+.resultado .etq{font-size:.92rem;color:rgba(255,255,255,.72)}
+.resultado .cifra{font-family:var(--titulos);font-weight:700;font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.1;margin:.3rem 0;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.resultado .cifra em{font-style:normal;color:var(--laton)}
+.resultado .det{font-size:.93rem;color:rgba(255,255,255,.78);margin:0}
+.calc-der .incluye{list-style:none;margin:0;padding:1rem 0 0;border-top:1px solid rgba(255,255,255,.15);display:grid;gap:.45rem;font-size:.93rem;color:rgba(255,255,255,.85)}
+.calc-der .incluye li{display:flex;gap:.55rem}
+.calc-der .incluye li::before{content:"✓";color:var(--laton);font-weight:700}
+.calc-der .btn{width:100%}
+.calc-der .legal{font-size:.82rem;color:rgba(255,255,255,.6);margin:0}
+
+/* Plan de mantenimiento mensual */
+.plan{background:linear-gradient(180deg,#fbf8f2 0%,var(--piedra) 100%)}
+.plan-cab{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:end;margin-bottom:clamp(1.8rem,4vw,2.6rem)}
+@media (max-width:56rem){.plan-cab{grid-template-columns:1fr;align-items:start}}
+.plan-cab > div{min-width:0}
+.ceja{display:inline-block;font-family:var(--titulos);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--laton-osc)}
+.plan-cab h2{font-size:clamp(1.8rem,4vw,2.7rem);color:var(--marino);margin-top:.6rem;text-wrap:balance}
+.plan-cab .entrada-plan{font-size:1.1rem;color:var(--tinta);margin:1rem 0 0;max-width:48ch}
+.ventajas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:30rem){.ventajas{grid-template-columns:1fr}}
+.ventajas li{display:grid;gap:.25rem}
+.ventajas b{font-family:var(--titulos);font-weight:600;color:var(--marino);display:flex;align-items:center;gap:.5rem}
+.ventajas b::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--laton);flex:none}
+.ventajas span{color:var(--suave);font-size:.95rem}
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}
+@media (max-width:62rem){.planes{grid-template-columns:1fr 1fr}}
+@media (max-width:40rem){.planes{grid-template-columns:1fr}}
+.plan-card{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden}
+.plan-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--laton),var(--laton-claro))}
+.plan-card .para{font-size:.9rem;color:var(--suave);margin:.2rem 0 0}
+.plan-card h3{font-size:1.35rem;color:var(--marino)}
+.plan-card .cuota{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .5rem;font-family:var(--titulos);color:var(--marino);border-block:1px solid var(--linea);padding:.8rem 0}
+.plan-card .cuota b{font-size:1.05rem}
+.plan-card .cuota span{font-size:.85rem;color:var(--suave);font-family:var(--texto)}
+.plan-card .lista{flex:1}
+.plan-card .btn{width:100%;background:var(--marino);color:#fff}
+.plan-card .btn:hover{background:var(--marino-3)}
+.check[hidden]{display:none}
+.plan-pie{text-align:center;color:var(--suave);font-size:.95rem;margin:1.4rem auto 0;max-width:46rem}
+
 /* Pie */
 .pie{background:var(--marino);color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.1);padding-block:2rem calc(5.5rem + env(safe-area-inset-bottom,0px));font-size:.93rem}
 .pie .contenedor{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem}
@@ -229,6 +291,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
       <a class="logo" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294 80" class="logo-svg" role="img" aria-label="Sinergia Proyectos e Ingeniería"><title>Sinergia Proyectos e Ingeniería</title><circle cx="38" cy="40" r="32.70" fill="none" stroke="#a8844a" stroke-width="2.6"/><path d="M49.83 28.17 A11.83 11.83 0 1 0 38.00 40.00 A11.83 11.83 0 1 1 26.17 51.83" fill="none" stroke="#ffffff" stroke-width="5.2" stroke-linecap="round"/><path d="M94.155 44.57Q91.26 44.57 89.2575 43.64Q87.255 42.71 86.2125 41.082499999999996Q85.17 39.455 85.17 37.37H89.34Q89.34 38.255 89.82 39.072500000000005Q90.3 39.89 91.35749999999999 40.4Q92.41499999999999 40.91 94.155 40.91Q95.73 40.91 96.77250000000001 40.4675Q97.815 40.025 98.3325 39.2825Q98.85 38.54 98.85 37.61Q98.85 36.455 97.86 35.75Q96.87 35.045 94.785 34.865L92.865 34.7Q89.715 34.43 87.84 32.735Q85.965 31.04 85.965 28.25Q85.965 26.165 86.955 24.65Q87.945 23.135 89.72999999999999 22.302500000000002Q91.515 21.470000000000002 93.91499999999999 21.470000000000002Q96.405 21.470000000000002 98.2125 22.340000000000003Q100.02 23.21 101.0025 24.785Q101.985 26.36 101.985 28.490000000000002H97.815Q97.815 27.605 97.38749999999999 26.84Q96.96 26.075 96.0975 25.6025Q95.235 25.13 93.91499999999999 25.13Q92.655 25.13 91.815 25.557499999999997Q90.975 25.985 90.555 26.697499999999998Q90.135 27.41 90.135 28.25Q90.135 29.270000000000003 90.885 30.035000000000004Q91.635 30.8 93.255 30.935000000000002L95.175 31.1Q97.53 31.295 99.2925 32.105000000000004Q101.055 32.915 102.0375 34.287499999999994Q103.02 35.66 103.02 37.61Q103.02 39.68 101.9325 41.254999999999995Q100.845 42.83 98.8575 43.7Q96.87 44.57 94.155 44.57ZM111.78 44.0V22.1H116.03999999999999V44.0ZM126.3 44.0V22.1H133.275L142.48499999999999 40.46H143.49L142.89 41.0V22.1H146.91V44.0H139.875L130.665 25.64H129.66L130.26 25.1V44.0ZM157.10999999999999 44.0V22.1H161.28V44.0ZM160.68 44.0V40.4H170.60999999999999V44.0ZM160.68 34.67V31.07H169.82999999999998V34.67ZM160.68 25.7V22.1H170.37V25.7ZM179.79 44.0V21.95H184.05V44.0ZM193.155 44.0 186.45 34.475H191.205L198.15 44.0ZM182.79 36.68V33.230000000000004H188.355Q189.54 33.230000000000004 190.39499999999998 32.75Q191.25 32.269999999999996 191.7225 31.4075Q192.195 30.545 192.195 29.42Q192.195 28.28 191.7225 27.4175Q191.25 26.555 190.39499999999998 26.067500000000003Q189.54 25.580000000000002 188.355 25.580000000000002H182.79V21.95H187.92000000000002Q190.54500000000002 21.95 192.48000000000002 22.7375Q194.415 23.525000000000002 195.465 25.1075Q196.51500000000001 26.69 196.51500000000001 29.105V29.585Q196.51500000000001 32.0 195.45 33.567499999999995Q194.385 35.135 192.465 35.9075Q190.54500000000002 36.68 187.92000000000002 36.68ZM216.375 44.57Q213.555 44.57 211.41000000000003 43.6325Q209.26500000000001 42.695 207.8175 41.09Q206.37 39.485 205.635 37.4525Q204.9 35.42 204.9 33.245000000000005V32.585Q204.9 30.515 205.6125 28.535Q206.32500000000002 26.555 207.72000000000003 24.9575Q209.115 23.36 211.17000000000002 22.415Q213.22500000000002 21.470000000000002 215.895 21.470000000000002Q218.775 21.470000000000002 221.0025 22.542500000000004Q223.23000000000002 23.615000000000002 224.58 25.520000000000003Q225.93 27.425 226.155 29.93H221.865Q221.67000000000002 28.520000000000003 220.83 27.515Q219.99 26.51 218.715 25.97Q217.44 25.43 215.895 25.43Q214.365 25.43 213.1275 25.97Q211.89000000000001 26.51 211.02 27.5075Q210.15 28.505000000000003 209.685 29.885Q209.22 31.265 209.22 32.945Q209.22 34.76 209.72250000000003 36.2Q210.22500000000002 37.64 211.15500000000003 38.644999999999996Q212.085 39.65 213.41250000000002 40.175Q214.74 40.7 216.375 40.7Q218.58 40.7 220.22250000000003 39.792500000000004Q221.865 38.885 222.63 37.415L221.88 40.85V35.21H225.81V40.07Q224.38500000000002 42.215 221.96250000000003 43.3925Q219.54000000000002 44.57 216.375 44.57ZM215.685 36.05V32.870000000000005H227.64000000000001V36.05ZM236.01 44.0V22.1H240.27V44.0ZM248.36999999999998 44.0 255.825 22.1H262.78499999999997L270.47999999999996 44.0H266.085L259.59 25.01L261.10499999999996 25.67H257.35499999999996L258.93 25.01L252.63 44.0ZM253.58999999999997 38.195 254.92499999999998 34.595H263.805L265.14 38.195Z" fill="#ffffff"/><path d="M86.932 63.333V62.43H88.6435Q89.1895 62.43 89.5465 62.214749999999995Q89.9035 61.9995 90.08725 61.632Q90.271 61.2645 90.271 60.813Q90.271 60.351 90.08725 59.9835Q89.9035 59.616 89.5465 59.406Q89.1895 59.196 88.6435 59.196H86.932V58.293H88.4545Q89.3995 58.293 90.03475 58.59225Q90.67 58.8915 90.99549999999999 59.4375Q91.321 59.9835 91.321 60.729V60.897Q91.321 61.632 90.99549999999999 62.18325Q90.67 62.7345 90.03475 63.03375Q89.3995 63.333 88.4545 63.333ZM86.113 66.0V58.293H87.142V66.0ZM95.773 66.0V58.293H96.80199999999999V66.0ZM100.5085 66.0 97.9675 62.5875H99.175L101.758 66.0ZM96.4135 63.228V62.3145H98.47149999999999Q98.9545 62.3145 99.30099999999999 62.115Q99.6475 61.9155 99.8365 61.56375Q100.0255 61.212 100.0255 60.7605Q100.0255 60.309 99.8365 59.95725Q99.6475 59.6055 99.30099999999999 59.40075Q98.9545 59.196 98.47149999999999 59.196H96.4135V58.293H98.2825Q99.1225 58.293 99.7525 58.545Q100.3825 58.797 100.72899999999998 59.322Q101.07549999999999 59.847 101.07549999999999 60.6765V60.8445Q101.07549999999999 61.674 100.72375 62.199Q100.372 62.724 99.74725000000001 62.976Q99.1225 63.228 98.2825 63.228ZM109.4965 66.189Q108.4675 66.189 107.72200000000001 65.82149999999999Q106.9765 65.454 106.49350000000001 64.8555Q106.01050000000001 64.257 105.77425 63.5745Q105.538 62.892 105.538 62.262V62.031Q105.538 61.3485 105.7795 60.6555Q106.021 59.9625 106.5145 59.390249999999995Q107.00800000000001 58.818 107.74825000000001 58.4715Q108.4885 58.125 109.4965 58.125Q110.50450000000001 58.125 111.24475000000001 58.4715Q111.985 58.818 112.4785 59.390249999999995Q112.97200000000001 59.9625 113.21350000000001 60.6555Q113.455 61.3485 113.455 62.031V62.262Q113.455 62.892 113.21875 63.5745Q112.9825 64.257 112.49950000000001 64.8555Q112.01650000000001 65.454 111.27100000000002 65.82149999999999Q110.52550000000001 66.189 109.4965 66.189ZM109.4965 65.244Q110.16850000000001 65.244 110.70925 64.99199999999999Q111.25 64.74 111.628 64.30425Q112.006 63.8685 112.2055 63.31725Q112.405 62.766 112.405 62.157Q112.405 61.5165 112.2055 60.96Q112.006 60.4035 111.628 59.97825Q111.25 59.553 110.70925 59.311499999999995Q110.16850000000001 59.07 109.4965 59.07Q108.8245 59.07 108.28375 59.311499999999995Q107.74300000000001 59.553 107.36500000000001 59.97825Q106.98700000000001 60.4035 106.78750000000001 60.96Q106.58800000000001 61.5165 106.58800000000001 62.157Q106.58800000000001 62.766 106.78750000000001 63.31725Q106.98700000000001 63.8685 107.36500000000001 64.30425Q107.74300000000001 64.74 108.28375 64.99199999999999Q108.8245 65.244 109.4965 65.244ZM119.5765 63.018 117.1405 58.335H118.2115L120.2695 62.346L119.87049999999999 62.2305H121.1095L120.6895 62.346L122.6215 58.335H123.6295L121.34049999999999 63.018ZM119.9545 66.0V62.808H120.96249999999999V66.0ZM127.8715 66.0V58.335H128.9005V66.0ZM128.6905 66.0V65.076H132.4075V66.0ZM128.6905 62.5665V61.6425H132.082V62.5665ZM128.6905 59.259V58.335H132.3025V59.259ZM140.44 66.189Q139.39000000000001 66.189 138.64975 65.82149999999999Q137.9095 65.454 137.45800000000003 64.866Q137.00650000000002 64.278 136.7965 63.590250000000005Q136.5865 62.9025 136.5865 62.262V62.031Q136.5865 61.338 136.80175 60.644999999999996Q137.017 59.952 137.4685 59.385Q137.92000000000002 58.818 138.6445 58.4715Q139.369 58.125 140.377 58.125Q141.406 58.125 142.14100000000002 58.482Q142.876 58.839 143.3065 59.4795Q143.737 60.12 143.8315 60.9915H142.7815Q142.69750000000002 60.3405 142.3615 59.91525Q142.0255 59.49 141.51625 59.28Q141.007 59.07 140.377 59.07Q139.6945 59.07 139.18 59.30625Q138.6655 59.5425 138.32425 59.967749999999995Q137.983 60.393 137.80975 60.9495Q137.6365 61.506 137.6365 62.157Q137.6365 62.7765 137.80975 63.333Q137.983 63.8895 138.33474999999999 64.32Q138.6865 64.7505 139.2115 64.99725000000001Q139.7365 65.244 140.44 65.244Q141.42700000000002 65.244 142.09900000000002 64.7505Q142.77100000000002 64.257 142.918 63.3225H143.96800000000002Q143.863 64.11 143.43775 64.761Q143.01250000000002 65.412 142.26175 65.8005Q141.511 66.189 140.44 66.189ZM149.89000000000001 66.0V59.049H150.919V66.0ZM147.559 59.259V58.335H153.25V59.259ZM161.0095 66.189Q159.9805 66.189 159.235 65.82149999999999Q158.4895 65.454 158.0065 64.8555Q157.52349999999998 64.257 157.28724999999997 63.5745Q157.051 62.892 157.051 62.262V62.031Q157.051 61.3485 157.2925 60.6555Q157.534 59.9625 158.02749999999997 59.390249999999995Q158.521 58.818 159.26125 58.4715Q160.0015 58.125 161.0095 58.125Q162.01749999999998 58.125 162.75775 58.4715Q163.498 58.818 163.99149999999997 59.390249999999995Q164.48499999999999 59.9625 164.7265 60.6555Q164.968 61.3485 164.968 62.031V62.262Q164.968 62.892 164.73174999999998 63.5745Q164.4955 64.257 164.0125 64.8555Q163.52949999999998 65.454 162.784 65.82149999999999Q162.0385 66.189 161.0095 66.189ZM161.0095 65.244Q161.6815 65.244 162.22225 64.99199999999999Q162.763 64.74 163.14100000000002 64.30425Q163.519 63.8685 163.7185 63.31725Q163.918 62.766 163.918 62.157Q163.918 61.5165 163.7185 60.96Q163.519 60.4035 163.14100000000002 59.97825Q162.763 59.553 162.22225 59.311499999999995Q161.6815 59.07 161.0095 59.07Q160.3375 59.07 159.79675 59.311499999999995Q159.256 59.553 158.878 59.97825Q158.5 60.4035 158.3005 60.96Q158.101 61.5165 158.101 62.157Q158.101 62.766 158.3005 63.31725Q158.5 63.8685 158.878 64.30425Q159.256 64.74 159.79675 64.99199999999999Q160.3375 65.244 161.0095 65.244ZM172.087 66.189Q171.1315 66.189 170.4595 65.874Q169.7875 65.559 169.4305 65.0025Q169.0735 64.446 169.0735 63.7425H170.1025Q170.1025 64.089 170.28625 64.43549999999999Q170.47 64.782 170.90575 65.013Q171.3415 65.244 172.087 65.244Q172.78 65.244 173.221 65.03925000000001Q173.662 64.8345 173.872 64.50375Q174.082 64.173 174.082 63.7845Q174.082 63.312 173.6725 63.002250000000004Q173.263 62.6925 172.4755 62.619L171.625 62.5455Q170.6065 62.4615 169.9975 61.9155Q169.3885 61.3695 169.3885 60.477Q169.3885 59.7735 169.72975 59.2485Q170.071 58.7235 170.68 58.42425Q171.28900000000002 58.125 172.0975 58.125Q172.8955 58.125 173.5045 58.419Q174.1135 58.713 174.45475 59.24325Q174.796 59.7735 174.796 60.5085H173.767Q173.767 60.141 173.59375 59.8155Q173.4205 59.49 173.053 59.28Q172.6855 59.07 172.0975 59.07Q171.5305 59.07 171.15775 59.2695Q170.785 59.469 170.60125 59.789249999999996Q170.4175 60.1095 170.4175 60.477Q170.4175 60.897 170.743 61.2225Q171.0685 61.548 171.709 61.6005L172.5595 61.674Q173.347 61.737 173.91925 62.00475Q174.4915 62.2725 174.80124999999998 62.71875Q175.111 63.165 175.111 63.7845Q175.111 64.488 174.733 65.03399999999999Q174.355 65.58 173.6725 65.8845Q172.99 66.189 172.087 66.189ZM185.107 66.0V58.335H186.136V66.0ZM185.926 66.0V65.076H189.643V66.0ZM185.926 62.5665V61.6425H189.3175V62.5665ZM185.926 59.259V58.335H189.538V59.259ZM199.702 66.0V58.335H200.73100000000002V66.0ZM205.918 66.0V58.335H207.598L211.4935 65.076H211.8295L211.61950000000002 65.265V58.335H212.6065V66.0H210.90550000000002L207.01000000000002 59.259H206.674L206.88400000000001 59.07V66.0ZM221.1955 66.189Q220.303 66.189 219.57850000000002 65.895Q218.854 65.601 218.33425 65.0655Q217.8145 64.53 217.531 63.800250000000005Q217.2475 63.0705 217.2475 62.2095V61.9785Q217.2475 61.2435 217.50475 60.55575Q217.762 59.868 218.25025 59.31675Q218.73850000000002 58.7655 219.442 58.44525Q220.1455 58.125 221.0275 58.125Q221.983 58.125 222.7285 58.48725Q223.47400000000002 58.8495 223.9255 59.49525Q224.377 60.141 224.4505 60.9915H223.40050000000002Q223.327 60.351 222.9805 59.92575Q222.63400000000001 59.5005 222.12475 59.285250000000005Q221.6155 59.07 221.0275 59.07Q220.429 59.07 219.925 59.285250000000005Q219.42100000000002 59.5005 219.05875000000003 59.8995Q218.69650000000001 60.2985 218.497 60.855Q218.2975 61.4115 218.2975 62.1045Q218.2975 62.892 218.51275 63.48525000000001Q218.728 64.0785 219.1165 64.47225Q219.505 64.866 220.03525000000002 65.0655Q220.56550000000001 65.265 221.1955 65.265Q222.08800000000002 65.265 222.76525 64.90275Q223.4425 64.5405 223.78900000000002 63.963L223.411 65.2125V62.934H224.377V64.761Q223.8625 65.433 223.05400000000003 65.811Q222.24550000000002 66.189 221.1955 66.189ZM220.9225 63.144V62.283H225.02800000000002V63.144ZM229.43800000000002 66.0V58.335H230.467V66.0ZM230.257 66.0V65.076H233.97400000000002V66.0ZM230.257 62.5665V61.6425H233.6485V62.5665ZM230.257 59.259V58.335H233.86900000000003V59.259ZM238.67800000000003 66.0V58.335H240.35800000000003L244.25350000000003 65.076H244.58950000000002L244.37950000000004 65.265V58.335H245.36650000000003V66.0H243.66550000000004L239.77000000000004 59.259H239.43400000000003L239.64400000000003 59.07V66.0ZM250.5535 66.0V58.335H251.58250000000004V66.0ZM256.76950000000005 66.0V58.335H257.79850000000005V66.0ZM257.5885 66.0V65.076H261.3055V66.0ZM257.5885 62.5665V61.6425H260.98V62.5665ZM257.5885 59.259V58.335H261.20050000000003V59.259ZM266.0095 66.0V58.293H267.0385V66.0ZM270.745 66.0 268.204 62.5875H269.4115L271.9945 66.0ZM266.65 63.228V62.3145H268.708Q269.19100000000003 62.3145 269.5375 62.115Q269.884 61.9155 270.073 61.56375Q270.262 61.212 270.262 60.7605Q270.262 60.309 270.073 59.95725Q269.884 59.6055 269.5375 59.40075Q269.19100000000003 59.196 268.708 59.196H266.65V58.293H268.519Q269.359 58.293 269.98900000000003 58.545Q270.619 58.797 270.9655 59.322Q271.312 59.847 271.312 60.6765V60.8445Q271.312 61.674 270.96025 62.199Q270.6085 62.724 269.98375 62.976Q269.359 63.228 268.519 63.228ZM276.32050000000004 66.0V58.335H277.34950000000003V66.0ZM276.226 57.726 277.5595 56.004H278.7355L277.15 57.726ZM281.71750000000003 66.0 284.47900000000004 58.335H286.22200000000004L289.06750000000005 66.0H288.00700000000006L285.43450000000007 59.007L285.93850000000003 59.259H284.69950000000006L285.23500000000007 59.007L282.7465 66.0ZM283.36600000000004 63.711 283.71250000000003 62.787H287.02000000000004L287.36650000000003 63.711Z" fill="#d9c7a4"/></svg></a>
       <nav>
         <a class="sec" href="#servicios">Servicios</a>
+        <a class="sec" href="#plan">Plan mensual</a>
         <a class="sec" href="#cobertura">Cobertura</a>
         <a class="sec" href="#condiciones">Condiciones</a>
         <a class="tel-cab" href="#" data-wa="cabecera" aria-label="WhatsApp 684 79 55 20"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.76-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span>684 79 55 20</span></a>
@@ -241,7 +304,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
     <div class="contenedor">
       <div>
         <h1>Reparaciones y mantenimiento del hogar, con alcance claro</h1>
-        <p class="entrada">Fontanería, electricidad, carpintería, climatización, montaje y paneles solares en la Comunidad de Madrid y provincias cercanas. Sabes qué incluye cada trabajo antes de la visita.</p>
+        <p class="entrada">Fontanería, electricidad, pladur, carpintería, climatización, montaje y paneles solares en la Comunidad de Madrid y provincias cercanas. Sabes qué incluye cada trabajo antes de la visita.</p>
         <div class="acciones">
           <a class="btn btn-laton" href="#solicitar">Solicitar un servicio</a>
           <a class="btn btn-wa" href="#" data-wa="portada"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.76-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg> WhatsApp 684 79 55 20</a>
@@ -290,6 +353,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
           <input type="hidden" name="utm_term"><input type="hidden" name="utm_content">
           <input type="hidden" name="gclid"><input type="hidden" name="fbclid">
           <input type="hidden" name="pagina_entrada"><input type="hidden" name="referencia">
+          <!-- Datos de la calculadora de pladur (se rellenan solos al usarla) -->
+          <input type="hidden" name="pladur_edificacion" id="hPladurEdif"><input type="hidden" name="pladur_m2" id="hPladurM2"><input type="hidden" name="pladur_estimacion" id="hPladurEst">
           <div class="col">
             <h3><b>1</b> El trabajo</h3>
             <div>
@@ -308,7 +373,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
             <div class="coste" id="coste">
               <strong>Coste de la visita de diagnóstico</strong>
               <ul>
-                <li>La visita de diagnóstico cuesta <b>30 €</b>.</li>
+                <li>La visita de diagnóstico cuesta <b>45 €</b>.</li>
                 <li>Si el desplazamiento supera los <b>15 km</b>, se suma un recargo de <b>15 €</b>.</li>
               </ul>
             </div>
@@ -353,7 +418,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
                 <option>Tarde (15:00 a 20:00)</option>
               </select>
             </div>
-            <label class="check"><input type="checkbox" name="acepta_coste_visita" value="Sí" required><span>Entiendo que la visita de diagnóstico cuesta 30 € y que hay un recargo de 15 € por desplazamientos de más de 15 km.</span></label>
+            <label class="check" id="aceptaCoste"><input type="checkbox" name="acepta_coste_visita" value="Sí" required><span>Entiendo que la visita de diagnóstico cuesta 45 € y que hay un recargo de 15 € por desplazamientos de más de 15 km.</span></label>
             <label class="check"><input type="checkbox" name="opt_in" required><span>He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a> y que Sinergia me contacte por WhatsApp, teléfono o correo sobre esta solicitud.</span></label>
             <label class="check"><input type="checkbox" name="marketing" value="Sí"><span>Quiero recibir ofertas y novedades de Sinergia (opcional).</span></label>
             <p class="aviso-form" id="avisoForm" hidden role="status"></p>
@@ -374,6 +439,78 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
       <p class="gremio-desc" id="gremioDesc"></p>
       <figure class="gremio-foto" id="gremioFoto" hidden></figure>
       <div class="servicios" id="listaServicios"></div>
+    </div>
+  </section>
+
+  <section class="bloque pladur-calc" id="pladur">
+    <div class="contenedor">
+      <div class="cabeza">
+        <h2>Calcula tu obra de pladur</h2>
+        <p>Tabiques, trasdosados y falsos techos. Elige el tipo de edificación y los metros cuadrados, y te mostramos un precio orientativo al momento.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-izq">
+          <fieldset>
+            <legend>1. Tipo de edificación</legend>
+            <div class="opciones" id="calcEdif">
+              <label class="opcion sel"><span><b>Vivienda unifamiliar o casa baja</b><small>Chalés, adosados y casas de una o dos plantas</small></span><span class="pm2">50 – 80 €/m²</span><input type="radio" name="calc_edif" value="vivienda" checked></label>
+              <label class="opcion"><span><b>Edificio entre medianeras</b><small>Pisos y locales en zonas urbanas</small></span><span class="pm2">80 – 120 €/m²</span><input type="radio" name="calc_edif" value="medianeras"></label>
+              <label class="opcion"><span><b>Nave industrial o estructura metálica</b><small>Naves, almacenes y talleres</small></span><span class="pm2">40 – 60 €/m²</span><input type="radio" name="calc_edif" value="nave"></label>
+            </div>
+          </fieldset>
+          <div>
+            <label for="calcTrabajo">2. Qué necesitas</label>
+            <select id="calcTrabajo">
+              <option value="Tabique de pladur">Tabique divisorio</option>
+              <option value="Trasdosado de pared">Trasdosado (revestir una pared existente)</option>
+              <option value="Falso techo continuo liso">Falso techo continuo liso</option>
+              <option value="Tabique o techo con aislamiento termoacústico">Tabique o techo con aislamiento termoacústico</option>
+              <option value="Otro">Aún no lo sé</option>
+            </select>
+          </div>
+          <div>
+            <label for="calcM2">3. Superficie aproximada</label>
+            <div class="m2">
+              <input type="range" id="calcRango" min="1" max="300" value="20" aria-label="Metros cuadrados">
+              <div class="num"><input id="calcM2" type="number" inputmode="numeric" min="1" max="5000" value="20"><span>m²</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="calc-der" aria-live="polite">
+          <div class="resultado">
+            <div class="etq">Precio orientativo</div>
+            <div class="cifra" id="calcCifra">1000 € <em>–</em> 1600 €</div>
+            <p class="det" id="calcDet">20 m² en vivienda unifamiliar o casa baja</p>
+          </div>
+          <ul class="incluye">
+            <li>Medición en tu casa o local antes de confirmar el precio</li>
+            <li>Material y mano de obra en el precio por m²</li>
+            <li>Presupuesto cerrado antes de empezar</li>
+          </ul>
+          <button type="button" class="btn btn-laton" id="calcPedir">Pedir presupuesto de pladur</button>
+          <p class="legal">Precio medio por m² orientativo. El importe final depende de la medición, los accesos y los acabados, y se confirma en el presupuesto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque plan" id="plan">
+    <div class="contenedor">
+      <div class="plan-cab">
+        <div>
+          <span class="ceja">Plan de mantenimiento mensual</span>
+          <h2>Una visita al mes y te olvidas de las urgencias</h2>
+          <p class="entrada-plan">Por una cuota mensual, un técnico de Sinergia revisa tu casa o tu negocio cada mes, hace los pequeños ajustes en el momento y te avisa de lo que conviene arreglar antes de que se convierta en una avería.</p>
+        </div>
+        <ul class="ventajas">
+          <li><b>Visita mensual con cita</b><span>Elegimos juntos el día. El técnico ya conoce tu casa.</span></li>
+          <li><b>Revisión completa</b><span>Agua, luz, climatización, puertas y ventanas.</span></li>
+          <li><b>Informe por correo</b><span>Lo revisado, lo ajustado y lo que conviene vigilar.</span></li>
+          <li><b>Prioridad si surge algo</b><span>Si aparece una avería entre visitas, tu aviso va primero.</span></li>
+        </ul>
+      </div>
+      <div class="planes" id="planes"></div>
+      <p class="plan-pie">Te enviamos por correo las condiciones y la cuota según el tamaño de tu vivienda o local. Sin compromiso.</p>
     </div>
   </section>
 
@@ -407,7 +544,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
         <a class="btn btn-wa" href="#" data-wa="cobertura"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.76-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg> Escribir por WhatsApp</a>
         <a class="btn btn-borde" href="tel:+34684795520">Llamar ahora</a>
         <ul class="tarifas">
-          <li>Visita de diagnóstico: <b>30 €</b></li>
+          <li>Visita de diagnóstico: <b>45 €</b></li>
           <li>Desplazamiento de más de 15 km: <b>+15 €</b></li>
         </ul>
       </aside>
@@ -422,11 +559,11 @@ input:focus,select:focus,textarea:focus{border-color:var(--marino-3);outline:3px
       </div>
       <div class="carrusel" id="carrusel" tabindex="0" aria-roledescription="carrusel" aria-label="Condiciones generales">
         <div class="escena">
-          <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><h3>Diagnósticos</h3><p>La visita de diagnóstico cuesta 30 €. Si después contratas la reparación, se descuenta del presupuesto.</p></article>
+          <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><h3>Diagnósticos</h3><p>La visita de diagnóstico cuesta 45 €. Si después contratas la reparación, se descuenta del presupuesto.</p></article>
           <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg><h3>Desplazamiento</h3><p>Los desplazamientos de más de 15 km tienen un recargo de 15 €.</p></article>
           <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V8M3 13h18"/></svg><h3>Materiales</h3><p>Salvo que se indique, no están incluidos. Si hacen falta, el profesional te propone la mejor opción.</p></article>
           <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><h3>Alternativas</h3><p>Si no hay materiales o aparecen daños ocultos, se valoran otras soluciones. Si no se acepta ninguna, se cobra la intervención mínima.</p></article>
-          <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 3v18M17 3v18M7 7h10M7 12h10M7 17h10"/></svg><h3>Trabajos en altura</h3><p>No están incluidos, salvo en los servicios que lo indiquen, como el diagnóstico de tejado.</p></article>
+          <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 3v18M17 3v18M7 7h10M7 12h10M7 17h10"/></svg><h3>Trabajos en altura</h3><p>No están incluidos, salvo en los servicios que lo indiquen, como el diagnóstico de tejado (con la escalera que aporte el cliente).</p></article>
           <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h3>Con cita previa</h3><p>Los servicios se programan con cita. Las urgencias no están incluidas.</p></article>
           <article class="tarjeta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Una sola visita</h3><p>Las horas incluidas se realizan en una visita y no se reparten entre varios días.</p></article>
         </div>
@@ -652,12 +789,19 @@ const G = [
   {t:"Empapelar una pared", i:["Saneamiento de la pared","Hasta 10 m² de superficie","Pegamento para papel"], x:["El papel","Reparaciones de albañilería","Quitar gotelé o papel anterior"]},
   {t:"Pintar techo de baño o cocina, o una pared", i:["Saneamiento de la pared","Hasta 10 m² de superficie","Pintura y materiales básicos"], x:["Reparaciones en la pared"], nt:"Pintura al temple, plástica o gotelé."}
  ]},
+ {id:"pladur", n:"Pladur", d:"Tabiques, trasdosados y falsos techos de placa de yeso laminado, con o sin aislamiento.", s:[
+  {t:"Tabique de pladur", i:["Tabique divisorio con estructura metálica y una placa por cada cara","Tornillería, cinta y pasta de juntas","Juntas tratadas, listo para pintar"], x:["Puertas y cercos","Instalación eléctrica dentro del tabique","Pintura"], nt:"Se presupuesta por m² después de medir."},
+  {t:"Trasdosado de pared", i:["Revestimiento de una pared existente, directo o autoportante","Placas, perfiles o pasta de agarre, y tornillería","Juntas tratadas, listo para pintar"], x:["Pintura","Mover enchufes, interruptores o radiadores"], nt:"Útil para nivelar paredes irregulares o pasar instalaciones. Se presupuesta por m²."},
+  {t:"Falso techo continuo liso", i:["Estructura colgada y placa de pladur","Huecos para focos o registros acordados","Juntas tratadas, listo para pintar"], x:["Focos e instalación eléctrica","Pintura","Andamios para techos de gran altura"], nt:"Se presupuesta por m² después de medir."},
+  {t:"Tabique o techo con aislamiento termoacústico", i:["Tabique o falso techo de pladur","Lana de roca o lana de vidrio en el interior","Juntas tratadas, listo para pintar"], x:["Pintura","Instalación eléctrica"], nt:"Mejora el aislamiento del ruido y de la temperatura entre estancias. Se presupuesta por m²."},
+  {t:"Reparación de agujeros en pladur", i:["Parche o placa nueva en la zona dañada","Cinta, masilla y lijado","Hasta 1 hora de trabajo"], x:["Pintura","Daños por humedad sin resolver"], nt:"Si el daño viene de una fuga o humedad, primero hay que localizar el origen."}
+ ]},
  {id:"poceria", n:"Pocería", d:"Desatascos de bajantes, arquetas y redes de saneamiento.", s:[
   {t:"Desatasco con camión cuba", i:["1 hora de camión cuba","Desplazamiento del camión"], nt:"Si no se puede desatascar por el mal estado de las tuberías, se valoran reparaciones de arquetas."},
   {t:"Desatasco con máquina manual", i:["1 hora con bomba de presión manual"], x:["Camión cuba"], nt:"Si el atasco es mayor, se valora enviar el camión cuba."}
  ]},
  {id:"tejados", n:"Tejados", d:"Localización de goteras y daños en cubierta.", s:[
-  {t:"Diagnóstico de tejado", i:["Subida al tejado para revisar daños","Medidas de seguridad para trabajo en altura, o uso de dron"], x:["Alquiler de andamio, plumas u otros medios si no hay acceso desde la vivienda"], nt:D}
+  {t:"Diagnóstico de tejado", i:["Subida al tejado para revisar daños, con la escalera o el acceso que aporte el cliente","Medidas de seguridad para trabajo en altura, o uso de dron"], x:["Escalera, andamio, plumas u otros medios de acceso al tejado"], nt:"El acceso al tejado corre por cuenta del cliente: tú pones la escalera o el medio para subir. "+D}
  ]}
 ];
 
@@ -705,20 +849,39 @@ const fichaHTML = s => `<div class="cols"><div><h5>Incluye</h5>${lista(s.i,"si")
   ir(0); requestAnimationFrame(bucle);
 })();
 
+
+/* ---------- Plan de mantenimiento mensual ---------- */
+const PLAN = {id:"plan-mantenimiento", n:"Plan de mantenimiento mensual", d:"Una visita al mes para revisar y mantener tu casa o tu negocio.", s:[
+  {t:"Plan Piso", para:"Pisos y apartamentos", i:["Visita mensual con cita","Revisión de grifos, cisternas, sifones y llaves de paso","Revisión del diferencial, enchufes e iluminación","Limpieza de filtros del aire acondicionado","Ajuste de puertas, bisagras y ventanas","Informe por correo tras cada visita"]},
+  {t:"Plan Casa", para:"Casas, chalés y adosados", i:["Todo lo del Plan Piso","Revisión de caldera o termo y radiadores","Revisión de arquetas, desagües y bajantes accesibles","Revisión de la puerta de garaje automática","Revisión de zonas exteriores accesibles"]},
+  {t:"Plan Negocio", para:"Locales, oficinas y comunidades", i:["Visita mensual en el horario que menos te afecte","Revisión de agua, luz y climatización de uso diario","Revisión de puertas, ventanas y accesos","Informe mensual para el responsable del local o la comunidad"]}
+]};
+const FG = [...G, PLAN];
+$("#planes").innerHTML = PLAN.s.map(p=>`<article class="plan-card"><div><h3>${esc(p.t)}</h3><p class="para">${esc(p.para)}</p></div><div class="cuota"><b>Cuota mensual a medida</b><span>según tamaño</span></div>${lista(p.i,"si")}<button type="button" class="btn" data-plan="${esc(p.t)}">Recibir información por correo</button></article>`).join("");
+
 /* ---------- Formulario ---------- */
 const selG = $("#gremio"), selT = $("#trabajo"), alc = $("#alcance");
-selG.insertAdjacentHTML("beforeend", G.map(g=>`<option value="${g.id}">${g.n}</option>`).join("") + `<option value="otro">Otro / no sé qué necesito</option>`);
+selG.insertAdjacentHTML("beforeend", G.map(g=>`<option value="${g.id}">${g.n}</option>`).join("") + `<option value="${PLAN.id}">${PLAN.n}</option><option value="otro">Otro / no sé qué necesito</option>`);
 function llenarTrabajos(){
-  const g = G.find(x=>x.id===selG.value); alc.hidden = true;
+  const g = FG.find(x=>x.id===selG.value); alc.hidden = true;
+  ajustarPlan();
   if(!selG.value){ selT.innerHTML = `<option value="">Primero elige una categoría</option>`; selT.disabled = true; return; }
   selT.disabled = false;
   if(!g){ selT.innerHTML = `<option value="Otro">Otro trabajo</option>`; return; }
-  selT.innerHTML = `<option value="">Elige el trabajo</option>` + g.s.map(s=>`<option>${esc(s.t)}</option>`).join("") + `<option value="Otro">Otro trabajo de ${g.n.toLowerCase()}</option>`;
+  selT.innerHTML = `<option value="">Elige el trabajo</option>` + g.s.map(s=>`<option>${esc(s.t)}</option>`).join("") + (g === PLAN ? "" : `<option value="Otro">Otro trabajo de ${g.n.toLowerCase()}</option>`);
 }
 function mostrarAlcance(){
-  const g = G.find(x=>x.id===selG.value), s = g && g.s.find(x=>x.t===selT.value);
+  const g = FG.find(x=>x.id===selG.value), s = g && g.s.find(x=>x.t===selT.value);
   if(!s){ alc.hidden = true; return; }
   alc.innerHTML = `<h4>Qué incluye: ${esc(s.t)}</h4>` + fichaHTML(s); alc.hidden = false;
+}
+/* El plan mensual no lleva visita de diagnóstico: se oculta el aviso de coste y su casilla */
+const costeBox = $("#coste"), aceptaBox = $("#aceptaCoste"), aceptaChk = aceptaBox.querySelector("input");
+function ajustarPlan(){
+  const esPlan = selG.value === PLAN.id;
+  costeBox.hidden = esPlan; aceptaBox.hidden = esPlan;
+  aceptaChk.disabled = esPlan; if (esPlan) aceptaChk.checked = false;
+  if (selG.value !== "pladur") ["#hPladurEdif","#hPladurM2","#hPladurEst"].forEach(id => $(id).value = "");
 }
 selG.addEventListener("change", llenarTrabajos);
 
@@ -750,7 +913,7 @@ document.addEventListener("submit", e => {
     aviso.textContent = "El formulario todavía no está conectado. Escríbenos por WhatsApp o a milolmos29@gmail.com.";
     aviso.hidden = false; return;
   }
-  const m = $("#mensaje"), pre = `[${selG.options[selG.selectedIndex].text} · ${selT.value} · ${$("#localidad").value} (${selZ.value})] `;
+  const m = $("#mensaje"), extraPladur = $("#hPladurM2").value ? ` · ${$("#hPladurM2").value} m² · ${$("#hPladurEdif").value} · ${$("#hPladurEst").value}` : "", pre = `[${selG.options[selG.selectedIndex].text} · ${selT.value}${extraPladur} · ${$("#localidad").value} (${selZ.value})] `;
   if (!m.value.startsWith("[")) m.value = pre + m.value;
 }, true);
 
@@ -772,6 +935,52 @@ listaS.addEventListener("click", e=>{
   $("#solicitar").scrollIntoView(); $("#mensaje").focus({preventScroll:true});
 });
 verGremio(G[0].id);
+
+
+/* ---------- Calculadora de pladur ---------- */
+(() => {
+  const TARIFAS = {
+    vivienda:   {n:"vivienda unifamiliar o casa baja", min:50, max:80},
+    medianeras: {n:"edificio entre medianeras", min:80, max:120},
+    nave:       {n:"nave industrial o estructura metálica", min:40, max:60}
+  };
+  const eur = v => new Intl.NumberFormat("es-ES",{maximumFractionDigits:0,useGrouping:true}).format(v) + " €";
+  const caja = $("#calcEdif"), rango = $("#calcRango"), num = $("#calcM2"), trab = $("#calcTrabajo");
+  const leer = () => {
+    const t = TARIFAS[caja.querySelector("input:checked").value];
+    const m2 = Math.max(1, Math.min(5000, Math.round(+num.value || 0)));
+    return {t, m2, min: t.min*m2, max: t.max*m2};
+  };
+  const pintar = () => {
+    caja.querySelectorAll(".opcion").forEach(o => o.classList.toggle("sel", o.querySelector("input").checked));
+    const r = leer();
+    $("#calcCifra").innerHTML = `${eur(r.min)} <em>–</em> ${eur(r.max)}`;
+    $("#calcDet").textContent = `${r.m2} m² en ${r.t.n} · ${r.t.min} – ${r.t.max} €/m²`;
+  };
+  caja.addEventListener("change", pintar);
+  rango.addEventListener("input", () => { num.value = rango.value; pintar(); });
+  num.addEventListener("input", () => { if (+num.value >= 1) rango.value = Math.min(300, +num.value); pintar(); });
+  num.addEventListener("blur", () => { num.value = leer().m2; pintar(); });
+  $("#calcPedir").addEventListener("click", () => {
+    const r = leer();
+    selG.value = "pladur"; llenarTrabajos();
+    selT.value = trab.value; mostrarAlcance();
+    $("#hPladurEdif").value = r.t.n; $("#hPladurM2").value = r.m2; $("#hPladurEst").value = `${eur(r.min)} – ${eur(r.max)}`;
+    const m = $("#mensaje");
+    if (!m.value.trim()) m.value = `Me interesa: ${trab.options[trab.selectedIndex].text}. Unos ${r.m2} m² en ${r.t.n}.`;
+    $("#solicitar").scrollIntoView(); m.focus({preventScroll:true});
+  });
+  pintar();
+})();
+
+/* Botones del plan: llevan al formulario con el plan elegido */
+$("#planes").addEventListener("click", e => {
+  const b = e.target.closest("[data-plan]"); if (!b) return;
+  selG.value = PLAN.id; llenarTrabajos(); selT.value = b.dataset.plan; mostrarAlcance();
+  const m = $("#mensaje");
+  if (!m.value.trim()) m.value = `Quiero recibir por correo la información del ${b.dataset.plan} (cuota y condiciones).`;
+  $("#solicitar").scrollIntoView(); $("#email").focus({preventScroll:true});
+});
 
 /* ---------- Carrusel 3D ---------- */
 (() => {
