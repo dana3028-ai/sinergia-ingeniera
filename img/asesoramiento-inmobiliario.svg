@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-label="Levantamiento con dron y venta de parcelas rústicas">
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#243f66"/><stop offset="1" stop-color="#e8dcc6"/></linearGradient>
+  </defs>
+  <rect width="1200" height="480" fill="url(#cielo)"/>
+  <circle cx="190" cy="110" r="46" fill="#f6f5f2" opacity=".9"/>
+  <!-- montañas -->
+  <path d="M0 270l170-110 140 90 200-130 210 140 150-80 330 120v90H0z" fill="#1b3354" opacity=".85"/>
+  <!-- colinas -->
+  <path d="M0 330c200-70 360-60 520-20s420 30 680-30v200H0z" fill="#3e6b4f"/>
+  <path d="M0 390c260-50 520-40 760-10s300 10 440-20v120H0z" fill="#2d7a52"/>
+  <!-- parcela con linderos -->
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="14 10" stroke-linejoin="round">
+    <path d="M330 390l150-48 330-4 120 52-60 60H370z" fill="#a8844a" fill-opacity=".28"/>
+  </g>
+  <g fill="#e8dcc6"><circle cx="330" cy="390" r="8"/><circle cx="480" cy="342" r="8"/><circle cx="810" cy="338" r="8"/><circle cx="930" cy="390" r="8"/><circle cx="870" cy="450" r="8"/><circle cx="370" cy="450" r="8"/></g>
+  <!-- cartel de venta -->
+  <g transform="translate(1000 300)">
+    <rect x="0" y="40" width="8" height="120" fill="#12233b"/>
+    <rect x="-60" y="0" width="128" height="62" rx="6" fill="#fff" stroke="#12233b" stroke-width="4"/>
+    <rect x="-44" y="16" width="96" height="9" rx="4" fill="#a8844a"/>
+    <rect x="-44" y="34" width="64" height="9" rx="4" fill="#12233b" opacity=".6"/>
+  </g>
+  <!-- árboles -->
+  <g fill="#1f5a3c"><path d="M120 400l24-70 24 70z"/><path d="M200 420l20-60 20 60z"/><path d="M1090 430l22-64 22 64z"/></g>
+  <g fill="#12233b"><rect x="141" y="400" width="6" height="14"/><rect x="217" y="420" width="6" height="12"/><rect x="1108" y="430" width="6" height="14"/></g>
+  <!-- dron + cono de escaneo -->
+  <g transform="translate(590 120)">
+    <path d="M0 40L-170 245h340z" fill="#fff" opacity=".18"/>
+    <path d="M0 40L-170 245M0 40L170 245" stroke="#fff" stroke-width="2" stroke-dasharray="6 6" opacity=".8"/>
+    <g stroke="#fff" stroke-width="2" opacity=".55" fill="none"><path d="M-110 160h220M-140 202h280"/></g>
+    <rect x="-26" y="-10" width="52" height="24" rx="10" fill="#12233b"/>
+    <circle cx="0" cy="26" r="9" fill="#a8844a" stroke="#fff" stroke-width="3"/>
+    <path d="M-26 0l-48-18M26 0l48-18M-26 8l-48 18M26 8l48 18" stroke="#12233b" stroke-width="6" stroke-linecap="round"/>
+    <g fill="#12233b"><ellipse cx="-82" cy="-22" rx="26" ry="5"/><ellipse cx="82" cy="-22" rx="26" ry="5"/><ellipse cx="-82" cy="32" rx="26" ry="5"/><ellipse cx="82" cy="32" rx="26" ry="5"/></g>
+  </g>
+</svg>

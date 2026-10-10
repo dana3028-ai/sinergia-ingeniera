@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-label="Diseño y optimización de espacios para recuperar capital">
+  <rect width="1200" height="480" fill="#12233b"/>
+  <g stroke="#243f66" stroke-width="1"><path d="M0 60h1200M0 120h1200M0 180h1200M0 240h1200M0 300h1200M0 360h1200M0 420h1200M60 0v480M120 0v480M180 0v480M240 0v480M300 0v480M360 0v480M420 0v480M480 0v480M540 0v480M600 0v480M660 0v480M720 0v480M780 0v480M840 0v480M900 0v480M960 0v480M1020 0v480M1080 0v480M1140 0v480"/></g>
+  <!-- plano de planta -->
+  <g transform="translate(90 70)" fill="none" stroke="#e8dcc6" stroke-width="6" stroke-linejoin="round">
+    <rect x="0" y="0" width="520" height="340"/>
+    <path d="M0 150h200v-150M200 150h120M320 0v190h200M320 190v150M120 340v-110"/>
+    <path d="M200 150v-30" stroke="#12233b" stroke-width="10"/>
+    <path d="M320 240h0" />
+  </g>
+  <g transform="translate(90 70)" fill="#a8844a" opacity=".35"><rect x="6" y="156" width="190" height="178"/><rect x="326" y="196" width="188" height="138"/></g>
+  <g transform="translate(90 70)" font-family="Sora,Segoe UI,sans-serif" font-size="20" fill="#e8dcc6"><text x="40" y="90">Espacio A</text><text x="46" y="260">Local</text><text x="370" y="110">Vivienda</text><text x="372" y="275">Renta</text></g>
+  <!-- cotas -->
+  <g stroke="#a8844a" stroke-width="3" fill="none"><path d="M90 440h520M90 430v20M610 430v20"/><path d="M640 70v340M630 70h20M630 410h20"/></g>
+  <!-- gráfico de recuperación de capital -->
+  <g transform="translate(700 90)">
+    <rect x="0" y="0" width="420" height="320" rx="16" fill="#1b3354" stroke="#243f66" stroke-width="2"/>
+    <g fill="#e8dcc6" opacity=".25"><rect x="40" y="200" width="50" height="90"/><rect x="120" y="170" width="50" height="120"/><rect x="200" y="130" width="50" height="160"/><rect x="280" y="90" width="50" height="200"/></g>
+    <g fill="#a8844a"><rect x="40" y="240" width="50" height="50"/><rect x="120" y="200" width="50" height="90"/><rect x="200" y="150" width="50" height="140"/><rect x="280" y="100" width="50" height="190"/></g>
+    <path d="M30 270L150 190 230 150 350 60" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M350 60l-24 4M350 60l-6 22" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="150" cy="190" r="6" fill="#fff"/><circle cx="230" cy="150" r="6" fill="#fff"/>
+    <path d="M30 290h360" stroke="#e8dcc6" stroke-width="3"/>
+    <text x="40" y="40" font-family="Sora,Segoe UI,sans-serif" font-size="22" font-weight="600" fill="#e8dcc6">Recuperación de capital</text>
+  </g>
+  <!-- grúa -->
+  <g stroke="#a8844a" stroke-width="4" fill="none"><path d="M1130 480V250M1130 250h-110M1130 250l25 30M1020 250v40"/></g>
+</svg>
